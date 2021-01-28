@@ -10,3 +10,10 @@ h3 {
   margin: 0.1rem;
 }
 
+
+@media (max-width: 500px) {
+
+  .btn-home {
+    display: block;
+  }
+}

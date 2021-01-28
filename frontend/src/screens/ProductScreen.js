@@ -14,7 +14,7 @@ const ProductScreen = ({ match }) => {
        <Col md={6}>
           <Image src={product.image} alt={product.name} fluid />
        </Col>
-       <Col md={3}>
+       <Col md={6}>
           <ListGroup variant='flush'>
             <ListGroupItem>
               <h3>{product.name}</h3>
@@ -29,37 +29,37 @@ const ProductScreen = ({ match }) => {
               Description: {product.description}
             </ListGroupItem>
           </ListGroup>
-       </Col>
-       <Col md={3}>
-         <Card>
-           <ListGroup variant='flush'>
-             <ListGroupItem>
-               <Row>
-                 <Col>
-                    Price:
-                 </Col>
-                 <Col>
-                  <strong>£{product.price}</strong>
-                 </Col>
-               </Row>
-             </ListGroupItem>
+          <Col md={12}>
+            <Card>
+              <ListGroup variant='flush'>
+                <ListGroupItem>
+                  <Row>
+                    <Col>
+                        Price:
+                    </Col>
+                    <Col>
+                      <strong>£{product.price}</strong>
+                    </Col>
+                  </Row>
+                </ListGroupItem>
 
-             <ListGroupItem>
-               <Row>
-                 <Col>
-                    Status:
-                 </Col>
-                 <Col>
-                  {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
-                 </Col>
-               </Row>
-             </ListGroupItem>
-             <ListGroupItem>
-               <Button className='btn-block' type='button' disabled={product.countInStock === 0}>Add To Cart</Button>
-             </ListGroupItem>
-           </ListGroup>
-         </Card>
-       </Col>
+                <ListGroupItem>
+                  <Row>
+                    <Col>
+                        Status:
+                    </Col>
+                    <Col>
+                      {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                    </Col>
+                  </Row>
+                </ListGroupItem>
+                <ListGroupItem>
+                  <Button className='btn-block' type='button' disabled={product.countInStock === 0}>Add To Cart</Button>
+                </ListGroupItem>
+              </ListGroup>
+            </Card>
+          </Col>
+        </Col>     
      </Row>
     </>
   )
