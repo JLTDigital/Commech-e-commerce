@@ -5,18 +5,18 @@ import Product from '../models/Productmodel.js'
 const router = express.Router()
 
 // @desc - Fetch all products
-// @route - GET /api/products
+// @route - GET /api/latest/products
 // @access - Public
-router.get('/', asyncHandler(async (req, res) => {
+router.get('/latest/products', asyncHandler(async (req, res) => {
   const products = await Product.find({})
 
   res.json(products)
 }))
 
 // @desc - Fetch a single product
-// @route - GET /api/products/:id
+// @route - GET /api/latest/products/:id
 // @access - Public
-router.get('/:id', asyncHandler(async(req, res) => {
+router.get('/product/:id', asyncHandler(async(req, res) => {
   const product = await Product.findById(req.params.id)
 
   if (product) {

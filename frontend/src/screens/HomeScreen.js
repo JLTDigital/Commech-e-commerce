@@ -16,7 +16,7 @@ const HomeScreen = () => {
         </Col>
         <Col className='text-center' md={12}>
           <h1 className='text-center mt-5'>Bringing you the latest and hottest Tech</h1>
-          <Link to='/latest-products' className='btn btn-dark my-5'>Latest</Link>
+          <Link to='/latest/products' className='btn btn-dark my-5'>Latest</Link>
         </Col>
       </Row>
 
