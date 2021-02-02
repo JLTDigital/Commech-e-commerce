@@ -15,10 +15,12 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-light">Search</Button>
-            </Form>
+          <Form inline>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-success">
+              <i class="fas fa-search"></i>
+            </Button>
+          </Form>
             <Nav className="ml-auto">
               <LinkContainer to='/cart'>
                 <Nav.Link><i className='fas fa-shopping-cart'></i>  Cart</Nav.Link>
