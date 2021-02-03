@@ -18,7 +18,7 @@ const Header = () => {
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">
-              <i class="fas fa-search"></i>
+              <i className="fas fa-search"></i>
             </Button>
           </Form>
             <Nav className="ml-auto">
