@@ -217,7 +217,7 @@ const products = [
   },
   {
     name: 'Playstation VR',
-    image: '/images/alexa.jpg',
+    image: '/images/ps_vr.jpg',
     description:
       'Watch as a living, breathing game world comes alive all around you, with a seamless field of view wherever you turn. Experience new realities with a custom OLED screen and smooth 120fps visuals to create complete immersion in your games.',
     brand: 'Sony',
@@ -229,7 +229,7 @@ const products = [
   },
   {
     name: 'Nintendo 64',
-    image: '/images/ps_vr.jpg',
+    image: '/images/n64.jpg',
     description:
       'With the 64-bit power of the Nintendo 64, players can explore breathtaking 3D worlds that explode with colour, dance with real-time lighting effects, and light up your ears with CD-quality sound. The Nintendo 64 was designed as a party machine, with four controller ports just begging to be filled. Get together with three friends and experience how astounding games like Mario Kart 64, Mario Party, and Donkey Kong 64 can blossom into laugh-a-minute multiplayer gameplay marathons.',
     brand: 'Nintendo',

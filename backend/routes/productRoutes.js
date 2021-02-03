@@ -13,6 +13,42 @@ router.get('/latest/products', asyncHandler(async (req, res) => {
   res.json(products)
 }))
 
+// @desc - Fetch computer & laptop products
+// @route - GET /api/computers-laptops
+// @access - Public
+router.get('/computers-laptops', asyncHandler(async (req, res) => {
+  const products = await Product.find({ category: 'computers/laptops'})
+
+  res.json(products)
+}))
+
+// @desc - Fetch retro products
+// @route - GET /api/retro
+// @access - Public
+router.get('/retro', asyncHandler(async (req, res) => {
+  const products = await Product.find({ category: 'retro'})
+
+  res.json(products)
+}))
+
+// @desc - Fetch smartphone products
+// @route - GET /api/retro
+// @access - Public
+router.get('/smartphones', asyncHandler(async (req, res) => {
+  const products = await Product.find({ category: 'smartphones'})
+
+  res.json(products)
+}))
+
+// @desc - Fetch VR products
+// @route - GET /api/retro
+// @access - Public
+router.get('/vr', asyncHandler(async (req, res) => {
+  const products = await Product.find({ category: 'VR'})
+
+  res.json(products)
+}))
+
 // @desc - Fetch a single product
 // @route - GET /api/products/:id
 // @access - Public
