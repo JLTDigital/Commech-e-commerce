@@ -5,6 +5,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen'
 import LatestProducts from './screens/LatestProducts'
+import CompLapScreen from './screens/CompLapScreen'
+import RetroScreen from './screens/RetroScreen'
+import SmartphoneScreen from './screens/Smartphones'
+import VRScreen from './screens/VirtualRealityScreen'
 import ProductScreen from './screens/ProductScreen'
 
 const App = () => {
@@ -15,6 +19,10 @@ const App = () => {
         <Container>
           <Route path='/' component={HomeScreen} exact />
           <Route path='/latest/products' component={LatestProducts} exact />
+          <Route path='/retro' component={RetroScreen} exact />
+          <Route path='/computers-laptops' component={CompLapScreen} exact />
+          <Route path='/smartphones' component={SmartphoneScreen} exact />
+          <Route path='/vr' component={VRScreen} exact />
           <Route path='/product/:id' component={ProductScreen} />
         </Container>
       </main>

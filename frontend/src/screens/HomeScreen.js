@@ -22,11 +22,11 @@ const HomeScreen = () => {
 
       <Row className='mt-5'>
         <Col className='tech' md={12}>
-          <h1 className=''>Retro Tech</h1>
+          <h1 className=''>Retro Consoles</h1>
           <Image src={Retro} fluid />
         </Col>
         <Col className='text-center' md={12}>
-          <Link to='#' className='btn btn-home btn-dark my-5'>Retro</Link>
+          <Link to='/retro' className='btn btn-home btn-dark my-5'>Retro</Link>
         </Col>
       </Row>
 
@@ -36,7 +36,7 @@ const HomeScreen = () => {
           <Image src={Computer} fluid />
         </Col>
         <Col className='text-center' md={12}>
-          <Link to='#' className='btn btn-home btn-dark my-5'>Computers / Laptops</Link>
+          <Link to='/computers-laptops' className='btn btn-home btn-dark my-5'>Computers / Laptops</Link>
         </Col>
       </Row>
 
@@ -46,7 +46,7 @@ const HomeScreen = () => {
           <Image src={Smartphone} fluid />
         </Col>
         <Col className='text-center' md={12}>
-          <Link to='#' className='btn btn-home btn-dark my-5'>Smartphones</Link>
+          <Link to='/smartphones' className='btn btn-home btn-dark my-5'>Smartphones</Link>
         </Col>
       </Row>
     
@@ -57,7 +57,7 @@ const HomeScreen = () => {
           <Image src={Vr} fluid />
         </Col>
         <Col className='text-center' md={12}>
-          <Link to='#' className='btn btn-home btn-dark my-5'>VR</Link>
+          <Link to='/vr' className='btn btn-home btn-dark my-5'>VR</Link>
         </Col>
       </Row>
     </>
