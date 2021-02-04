@@ -29,8 +29,32 @@ h3 {
     display: block;
   }
 
+  .item-a {
+    grid-area: latest;
+  }
+
+  .item-b {
+    grid-area: retro;
+  }
+
+  .item-c {
+    grid-area: computers;
+  }
+
+  .item-d {
+    grid-area: smartphones;
+  }
+
+  .item-e {
+    grid-area: vr;
+  }
+
   .productDetailsNav {
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-areas: 
+      "latest retro"
+      "computers smartphones"
+      "vr vr"
+    ;
   }
 }
