@@ -32,16 +32,16 @@ const Header = () => {
                 <LinkContainer to='/latest/products'>
                   <NavDropdown.Item>Latest Products</NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to='#'>
+                <LinkContainer to='/retro'>
                   <NavDropdown.Item>Retro Tech</NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to='#'>
+                <LinkContainer to='/computers-laptops'>
                   <NavDropdown.Item>Computers / Laptops</NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to='#'>
+                <LinkContainer to='/smartphones'>
                   <NavDropdown.Item>Smartphones</NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to='#'>
+                <LinkContainer to='/vr'>
                   <NavDropdown.Item>Virtual reality</NavDropdown.Item>
                 </LinkContainer>
               </NavDropdown>

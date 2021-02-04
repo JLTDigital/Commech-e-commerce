@@ -18,6 +18,12 @@ h3 {
   width: 100px;
 }
 
+.productDetailsNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 400px) {
   .btn-home {
     display: block;

@@ -7,7 +7,7 @@ import HomeScreen from './screens/HomeScreen'
 import LatestProducts from './screens/LatestProducts'
 import CompLapScreen from './screens/CompLapScreen'
 import RetroScreen from './screens/RetroScreen'
-import SmartphoneScreen from './screens/Smartphones'
+import SmartphoneScreen from './screens/SmartphonesScreen'
 import VRScreen from './screens/VirtualRealityScreen'
 import ProductScreen from './screens/ProductScreen'
 

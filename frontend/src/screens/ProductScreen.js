@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+// import from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Image, ListGroup, Card, Button, ListGroupItem } from 'react-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Rating from '../components/Rating'
+import ProductNav from '../components/productDetailsNav'
 import { listProductDetails } from '../actions/productActions'
 
 const ProductScreen = ({ match }) => {
@@ -19,7 +20,7 @@ const ProductScreen = ({ match }) => {
 
   return (
     <>
-     <Link className='btn btn-light my-3' to='/latest/products'>Back</Link> 
+     <ProductNav />
      {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
        <Row>
        <Col md={6}>

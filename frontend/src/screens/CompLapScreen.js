@@ -4,21 +4,23 @@ import { Col, Row } from 'react-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Product from '../components/Product'
-import { listProducts } from '../actions/productActions'
+import ProductNav from '../components/productDetailsNav'
+import { computerLaptopProducts } from '../actions/productActions'
 
 const CompLapScreen = () => {
   const dispatch = useDispatch()
 
-  const productList = useSelector(state => state.productList)
-  const { loading, error, products } = productList
+  const computerLaptopList = useSelector(state => state.computerLaptopList)
+  const { loading, error, products } = computerLaptopList
 
   useEffect(() => {
-    dispatch(listProducts())
+    dispatch(computerLaptopProducts())
   }, [dispatch])
 
   return (
     <>
       <h1 className='mt-3 text-center'>Computers / Laptops</h1>
+      <ProductNav />
       {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : <Row className='mt-3'>
         {products.map(product => (
           <Col key={product._id} sm={12} md={6} lg={6} xl={4}>

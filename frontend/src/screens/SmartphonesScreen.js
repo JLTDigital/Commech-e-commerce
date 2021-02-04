@@ -5,21 +5,21 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Product from '../components/Product'
 import ProductNav from '../components/productDetailsNav'
-import { listProducts } from '../actions/productActions'
+import { smartphoneProducts } from '../actions/productActions'
 
-const LatestProducts = () => {
+const SmartphonesScreen = () => {
   const dispatch = useDispatch()
 
-  const productList = useSelector(state => state.productList)
-  const { loading, error, products } = productList
+  const smartphoneList = useSelector(state => state.smartphoneList)
+  const { loading, error, products } = smartphoneList
 
   useEffect(() => {
-    dispatch(listProducts())
+    dispatch(smartphoneProducts())
   }, [dispatch])
 
   return (
     <>
-      <h1 className='mt-3 text-center'>Hottest Tech Right Now...</h1>
+      <h1 className='mt-3 text-center'>Smartphones</h1>
       <ProductNav />
       {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : <Row className='mt-3'>
         {products.map(product => (
@@ -32,4 +32,4 @@ const LatestProducts = () => {
   )
 }
 
-export default LatestProducts
+export default SmartphonesScreen
