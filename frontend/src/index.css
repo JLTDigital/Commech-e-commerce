@@ -28,4 +28,9 @@ h3 {
   .btn-home {
     display: block;
   }
+
+  .productDetailsNav {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
 }
