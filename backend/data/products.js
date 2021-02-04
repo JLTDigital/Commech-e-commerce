@@ -29,7 +29,7 @@ const products = [
     description:
       '5G goes Pro. A14 Bionic rockets past every other smartphone chip. The Pro camera system takes low-light photography to the next level — with an even bigger jump on iPhone 12 Pro Max. And Ceramic Shield delivers four times better drop performance. Let’s see what this thing can do.',
     brand: 'Apple',
-    category: 'smartphone',
+    category: 'smartphones',
     price: 999.99,
     countInStock: 7,
     rating: 4.0,
@@ -250,6 +250,54 @@ const products = [
     countInStock: 1,
     rating: 3.5,
     numReviews: 7,
+  },
+  {
+    name: 'Atari 2600',
+    image: '/images/atari.jpg',
+    description:
+      'Launched in Europe in 1978, the original Atari was one of the most popular home video game consoles of its time. Originally known simply as the Atari VCS (Video Computer System), the console became known as the 2600 after the release of its successor, the Atari 5200. Having sold around 30 million units worldwide, the 2600 brought the thrills of arcade gaming into the living room, and was one of the first – and best – machines to do so.',
+    brand: 'Atari',
+    category: 'retro',
+    price: 200,
+    countInStock: 1,
+    rating: 4,
+    numReviews: 5,
+  },
+  {
+    name: 'Original Gameboy Console',
+    image: '/images/gameboy.jpg',
+    description:
+      'Classic handheld Nintendo gameboy that was launched in Japan in 1989 selling over 100 million units, giving gamers all over the world the freedom to play their favorite games including Tetris, Super Mario and many more',
+    brand: 'Nintendo',
+    category: 'retro',
+    price: 200,
+    countInStock: 1,
+    rating: 5,
+    numReviews: 10,
+  },
+  {
+    name: 'Sony Playstation',
+    image: '/images/ps1.jpg',
+    description:
+      'Home console developed by Sony and released in Europe in September 1995. The first games console to sell over 100 million units (102.5 million worldwide). Launched key franchises such as Gran Turismo, Tekken, and Grand Theft Auto. Also featured functionality for playing audio CDs, including shuffle and repeat',
+    brand: 'Sony',
+    category: 'retro',
+    price: 44.95,
+    countInStock: 3,
+    rating: 5,
+    numReviews: 8,
+  },
+  {
+    name: 'Super Nintendo Entertainment System (SNES)',
+    image: '/images/snes.jpg',
+    description:
+      'First brought to Europe in 1992, the Super Nintendo Entertainment System (SNES) blew gamers away with visuals and gameplay that dragged video games into a spectacular new era. The Super Nintendo features true stereo sound, multiple scrolling backgrounds, and twice the built-in memory of the older NES. Giant-sized Game Paks allow the system to recreate sprawling worlds that take weeks to explore.',
+    brand: 'Nintendo',
+    category: 'retro',
+    price: 289.95,
+    countInStock: 1,
+    rating: 3.5,
+    numReviews: 2,
   },
 ]
 
