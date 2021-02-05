@@ -10,6 +10,7 @@ import RetroScreen from './screens/RetroScreen'
 import SmartphoneScreen from './screens/SmartphonesScreen'
 import VRScreen from './screens/VirtualRealityScreen'
 import ProductScreen from './screens/ProductScreen'
+import CartScreen from './screens/CartScreen'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/smartphones' component={SmartphoneScreen} exact />
           <Route path='/vr' component={VRScreen} exact />
           <Route path='/product/:id' component={ProductScreen} />
+          <Route path='/cart/:id?' component={CartScreen} />
         </Container>
       </main>
       <Footer />
