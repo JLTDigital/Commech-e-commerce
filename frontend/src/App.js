@@ -11,6 +11,8 @@ import SmartphoneScreen from './screens/SmartphonesScreen'
 import VRScreen from './screens/VirtualRealityScreen'
 import ProductScreen from './screens/ProductScreen'
 import CartScreen from './screens/CartScreen'
+import LoginScreen from './screens/LoginScreen' 
+import RegisterScreen from './screens/RegisterScreen' 
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
       <Header />
       <main className='py-3'>
         <Container>
+          <Route path='/login' component={LoginScreen} />
+          <Route path='/register' component={RegisterScreen} />
           <Route path='/' component={HomeScreen} exact />
           <Route path='/latest/products' component={LatestProducts} exact />
           <Route path='/retro' component={RetroScreen} exact />

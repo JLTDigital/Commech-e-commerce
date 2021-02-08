@@ -38,6 +38,18 @@ h3 {
   justify-content: center;
 }
 
+.register-btn {
+  font-weight: bold;
+}
+
+.login-btn {
+  font-weight: bold;
+}
+
+
+
+/* Media Queries */
+
 @media (max-width: 400px) {
   .btn-home {
     display: block;
