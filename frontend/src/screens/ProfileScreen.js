@@ -82,7 +82,7 @@ const ProfileScreen = ({ history }) => {
           <Button type='submit' variant='primary'>Update</Button>
         </Form>
         </Col>
-      <Col md={8}>
+      <Col className='mt-4' md={8}>
         <h2>My Orders</h2>
       </Col>
     </Row>
