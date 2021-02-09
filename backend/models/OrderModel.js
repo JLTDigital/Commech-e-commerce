@@ -36,17 +36,12 @@ const orderSchema = mongoose.Schema(
     update_time: { type: String },
     email_address: { type: String },
   },
-  vatPrice: {
-    type: Number,
-    required: true,
-    default: 0.0
-  },
   shippingPrice: {
     type: Number,
     required: true,
     default: 0.0
   },
-  grossPrice: {
+  totalPrice: {
     type: Number,
     required: true,
     default: 0.0
