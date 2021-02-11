@@ -16,7 +16,13 @@ import {
   SMARTPHONE_LIST_FAIL,
   VR_LIST_REQUEST,
   VR_LIST_SUCCESS,
-  VR_LIST_FAIL
+  VR_LIST_FAIL,
+  ALL_PRODUCTS_REQUEST,
+  ALL_PRODUCTS_SUCCESS,
+  ALL_PRODUCTS_FAIL,
+  PRODUCT_DELETE_REQUEST,
+  PRODUCT_DELETE_SUCCESS,
+  PRODUCT_DELETE_FAIL
 } from '../constants/productConstants'
 
 export const productListReducer = (state = { products: [] }, action) => {
@@ -26,6 +32,19 @@ export const productListReducer = (state = { products: [] }, action) => {
     case PRODUCT_LIST_SUCCESS:
       return { loading: false, products: action.payload }
     case PRODUCT_LIST_FAIL:
+      return { loading: false, error: action.payload }
+    default:
+      return state
+  }
+}
+
+export const  allProductsListReducer = (state = { products: [] }, action) => {
+  switch(action.type) {
+    case ALL_PRODUCTS_REQUEST:
+      return { loading: true, products: [] }
+    case ALL_PRODUCTS_SUCCESS:
+      return { loading: false, products: action.payload }
+    case ALL_PRODUCTS_FAIL:
       return { loading: false, error: action.payload }
     default:
       return state
@@ -91,6 +110,19 @@ export const productDetailsReducer = (state = { product: { reviews: [] } }, acti
     case PRODUCT_DETAILS_SUCCESS:
       return { loading: false, product: action.payload }
     case PRODUCT_DETAILS_FAIL:
+      return { loading: false, error: action.payload }
+    default:
+      return state
+  }
+}
+
+export const productDeleteReducer = (state = {}, action) => {
+  switch(action.type) {
+    case PRODUCT_DELETE_REQUEST:
+      return { loading: true }
+    case PRODUCT_DELETE_SUCCESS:
+      return { loading: false, success: true, product: action.payload }
+    case PRODUCT_DELETE_FAIL:
       return { loading: false, error: action.payload }
     default:
       return state

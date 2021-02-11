@@ -54,7 +54,35 @@ const getProductById = asyncHandler(async (req, res) => {
 
   if (product) {
     res.json(product)
-    
+  } else {
+    res.status(404)
+    throw new Error('Product not found')
+  }
+})
+
+// @desc - Get all products
+// @route - GET /api/products/all
+// @access - public
+const getAllProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({})
+
+  if (products) {
+    res.json(products)
+  } else {
+    res.status(404)
+    throw new Error('Products not found')
+  }
+})
+
+// @desc - Delete a single product
+// @route - DELETE /api/product/:id
+// @access - Private / Admin
+const deleteProduct = asyncHandler(async (req, res) => {
+  const product = await Product.findById(req.params.id)
+
+  if (product) {
+    await product.remove()
+    res.json({ message: 'Product Removed' })
   } else {
     res.status(404)
     throw new Error('Product not found')
@@ -67,5 +95,7 @@ export {
   getComputerLaptopProducts,
   getSmartphoneProducts,
   getVrProducts,
-  getProductById
+  getProductById,
+  getAllProducts,
+  deleteProduct
 }

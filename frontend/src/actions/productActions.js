@@ -17,7 +17,13 @@ import {
   SMARTPHONE_LIST_FAIL,
   VR_LIST_REQUEST,
   VR_LIST_SUCCESS,
-  VR_LIST_FAIL
+  VR_LIST_FAIL,
+  ALL_PRODUCTS_REQUEST,
+  ALL_PRODUCTS_SUCCESS,
+  ALL_PRODUCTS_FAIL,
+  PRODUCT_DELETE_REQUEST,
+  PRODUCT_DELETE_SUCCESS,
+  PRODUCT_DELETE_FAIL
 } from '../constants/productConstants'
 
 export const listProducts = () => async (dispatch) => {
@@ -33,6 +39,24 @@ export const listProducts = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
+      payload: error.response && error.response.data.message ? error.response.data.message : error.message
+    })
+  }
+}
+
+export const listAllProducts = () => async (dispatch) => {
+  try {
+    dispatch({ type: ALL_PRODUCTS_REQUEST })
+
+    const { data } = await axios.get('/api/products/all')
+
+    dispatch({
+      type: ALL_PRODUCTS_SUCCESS,
+      payload: data
+    })
+  } catch (error) {
+    dispatch({
+      type: ALL_PRODUCTS_FAIL,
       payload: error.response && error.response.data.message ? error.response.data.message : error.message
     })
   }
@@ -123,6 +147,34 @@ export const listProductDetails = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PRODUCT_DETAILS_FAIL,
+      payload: error.response && error.response.data.message ? error.response.data.message : error.message
+    })
+  }
+}
+
+export const deleteProduct = (id) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: PRODUCT_DELETE_REQUEST
+    })
+
+    const {userLogin: { userInfo } } = getState()
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`
+      }
+    }
+
+    await axios.delete(`/api/product/${id}`, config)
+
+    dispatch({
+      type: PRODUCT_DELETE_SUCCESS
+    })
+
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_DELETE_FAIL,
       payload: error.response && error.response.data.message ? error.response.data.message : error.message
     })
   }
