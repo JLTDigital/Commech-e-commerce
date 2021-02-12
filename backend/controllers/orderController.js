@@ -67,7 +67,26 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
   }
 })
 
-// @desc - Get logged in user orders
+// @desc - Update dispatched status of an order
+// @route - PUT /api/orders/:id/pay
+// @access - Private
+const updateOrderToDispatched = asyncHandler(async (req, res) => {
+  const order = await Order.findById(req.params.id)
+
+  if (order) {
+    order.isDispatched = true
+    order.dispatchedAt = Date.now()
+
+    const updatedOrder = await order.save()
+
+    res.json(updatedOrder)
+  } else {
+    res.status(404)
+    throw new Error('Order not found')
+  }
+})
+
+// @desc - Get the orders of the logged in user
 // @route - GET /api/orders/myorders
 // @access - Private
 const getMyOrders = asyncHandler(async (req, res) => {
@@ -76,9 +95,20 @@ const getMyOrders = asyncHandler(async (req, res) => {
   res.json(orders)
 })
 
+// @desc - Get all orders on the database
+// @route - GET /api/orders
+// @access - Private
+const getOrders = asyncHandler(async (req, res) => {
+  const orders = await Order.find({}).populate('user', 'id name')
+
+  res.json(orders)
+})
+
 export {
   addOrderItems,
   getOrderByID,
   updateOrderToPaid,
-  getMyOrders
+  getMyOrders,
+  getOrders,
+  updateOrderToDispatched
 }
