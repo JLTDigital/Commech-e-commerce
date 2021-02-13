@@ -6,6 +6,7 @@ import Loader from '../components/Loader'
 import Product from '../components/Product'
 import ProductNav from '../components/productDetailsNav'
 import Paginate from '../components/Paginate'
+import SEO from '../components/SEO'
 import { listProducts } from '../actions/productActions'
 
 const LatestProducts = ({ match }) => {
@@ -26,6 +27,7 @@ const LatestProducts = ({ match }) => {
       <ProductNav />
       {loading ? (<Loader />) : error ? (<Message variant='danger'>{error}</Message>) : ( 
       <>
+      <SEO title='Commech | Latest Products' />
       <Row className='mt-3'>
         {products.map(product => (
           <Col key={product._id} sm={12} md={6} lg={6} xl={4}>

@@ -6,6 +6,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Rating from '../components/Rating'
 import ProductNav from '../components/productDetailsNav'
+import SEO from '../components/SEO'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
 import { listProductDetails, createProductReview } from '../actions/productActions'
 
@@ -51,6 +52,7 @@ const ProductScreen = ({ history, match }) => {
      <ProductNav />
      {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
        <>
+       <SEO title={product.name} />
        <Row>
        <Col className='product-image' md={6}>
           <Image src={product.image} alt={product.name} fluid />

@@ -6,12 +6,15 @@ import Retro from '../Commech/retro.jpg'
 import Computer from '../Commech/computer.jpg'
 import Smartphone from '../Commech/smartphone.jpg'
 import Vr from '../Commech/vr.jpg'
+import ProductCarousel from '../components/ProductCarousel'
+import SEO from '../components/SEO'
 
 
 const HomeScreen = () => {
 
   return (
     <>
+    <SEO />
       <Row>
         <Col md={12}>
           <Image src={Commech} fluid /> 
@@ -22,43 +25,30 @@ const HomeScreen = () => {
         </Col>
       </Row>
 
-      <Row className='mt-5'>
-        <Col className='tech' md={12}>
-          <h1 className=''>Retro Consoles</h1>
-          <Image src={Retro} fluid />
-        </Col>
-        <Col className='text-center' md={12}>
-          <Link to='/retro' className='btn btn-home btn-dark my-5'>Retro</Link>
-        </Col>
-      </Row>
+      <ProductCarousel />
 
       <Row className='mt-5'>
-        <Col className='tech' md={12}>
-          <h1 className='text-right'>Computers / Laptops</h1>
-          <Image src={Computer} fluid />
+        <Col className='tech' md={6}>
+          <h1 className=''>Retro Consoles</h1>
+          <Image className='hp-img' src={Retro} fluid />
+          <Link to='/retro' className='btn btn-home btn-dark my-5'>Retro</Link>
         </Col>
-        <Col className='text-center' md={12}>
+        <Col className='tech' md={6}>
+          <h1 className='text-right'>Computers / Laptops</h1>
+          <Image className='hp-img' src={Computer} fluid />
           <Link to='/computers-laptops' className='btn btn-home btn-dark my-5'>Computers / Laptops</Link>
         </Col>
       </Row>
 
       <Row className='mt-5'>
-        <Col className='tech' md={12}>
+        <Col className='tech' md={6}>
           <h1 className=''>Smartphones</h1>
-          <Image src={Smartphone} fluid />
-        </Col>
-        <Col className='text-center' md={12}>
+          <Image className='hp-img' src={Smartphone} fluid />
           <Link to='/smartphones' className='btn btn-home btn-dark my-5'>Smartphones</Link>
         </Col>
-      </Row>
-    
-
-      <Row className='mt-5'>
-        <Col className='tech' md={12}>
+        <Col className='tech' md={6}>
           <h1 className='text-right'>Virtual Reality</h1>
-          <Image src={Vr} fluid />
-        </Col>
-        <Col className='text-center' md={12}>
+          <Image className='hp-img' src={Vr} fluid />
           <Link to='/vr' className='btn btn-home btn-dark my-5'>VR</Link>
         </Col>
       </Row>
