@@ -5,45 +5,70 @@ import Product from '../models/Productmodel.js'
 // @route - GET /api/latest/products
 // @access - Public
 const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({ category: 'latest'})
+  const pageSize = 0
+  const page = Number(req.query.pageNumber) || 1
 
-  res.json(products)
+  const count = await Product.countDocuments({})
+
+  const products = await Product.find({ category: 'latest' }).limit(pageSize).skip(pageSize * (page -1))
+
+  res.json({products, page, pages: Math.ceil(count / pageSize)})
 })
 
 // @desc - Fetch computer & laptop products
 // @route - GET /api/computers-laptops
 // @access - Public
 const getComputerLaptopProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({ category: 'computers/laptops'})
+  const pageSize = 0
+  const page = Number(req.query.pageNumber) || 1
 
-  res.json(products)
+  const count = await Product.countDocuments({})
+
+  const products = await Product.find({ category: 'computers/laptops'}).limit(pageSize).skip(pageSize * (page -1))
+
+  res.json({products, page, pages: Math.ceil(count / pageSize)})
 })
 
 // @desc - Fetch retro products
 // @route - GET /api/retro
 // @access - Public
 const getRetroProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({ category: 'retro'})
+  const pageSize = 0
+  const page = Number(req.query.pageNumber) || 1
 
-  res.json(products)
+  const count = await Product.countDocuments({})
+
+  const products = await Product.find({ category: 'retro'}).limit(pageSize).skip(pageSize * (page - 1))
+
+  res.json({products, page, pages: Math.ceil(count / pageSize)})
 })
 
 // @desc - Fetch smartphone products
-// @route - GET /api/retro
+// @route - GET /api/smartphones
 // @access - Public
 const getSmartphoneProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({ category: 'smartphones'})
+  const pageSize = 0
+  const page = Number(req.query.pageNumber) || 1
 
-  res.json(products)
+  const count = await Product.countDocuments({})
+
+  const products = await Product.find({ category: 'smartphones'}).limit(pageSize).skip(pageSize * (page -1))
+
+  res.json({products, page, pages: Math.ceil(count / pageSize)})
 })
 
 // @desc - Fetch VR products
-// @route - GET /api/retro
+// @route - GET /api/vr
 // @access - Public
 const getVrProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({ category: 'VR'})
+  const pageSize = 0
+  const page = Number(req.query.pageNumber) || 1
 
-  res.json(products)
+  const count = await Product.countDocuments({})
+
+  const products = await Product.find({ category: 'VR'}).limit(pageSize).skip(pageSize * (page -1))
+
+  res.json({products, page, pages: Math.ceil(count / pageSize)})
 })
 
 // @desc - Fetch a single product

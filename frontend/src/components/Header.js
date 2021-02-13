@@ -1,9 +1,11 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
 import { logout } from '../actions/userActions'
-import { Navbar, Nav, Form, FormControl, Button, Container, NavDropdown, Image } from 'react-bootstrap'
+import { Navbar, Nav, Container, NavDropdown, Image } from 'react-bootstrap'
 import Logo from '../Commech/logo.png'
+import Search from '../components/Search'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -26,12 +28,7 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">
-              <i className="fas fa-search"></i>
-            </Button>
-          </Form>
+            <Route render={({ history }) => <Search history={history} />} />
             <Nav className="ml-auto">
               <LinkContainer to='/cart'>
                 <Nav.Link><i className='fas fa-shopping-cart'></i>  Cart</Nav.Link>

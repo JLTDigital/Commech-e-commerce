@@ -29,14 +29,17 @@ import {
   PRODUCT_CREATE_FAIL,
   PRODUCT_UPDATE_REQUEST,
   PRODUCT_UPDATE_SUCCESS,
-  PRODUCT_UPDATE_FAIL
+  PRODUCT_UPDATE_FAIL,
+  PRODUCT_CREATE_REVIEW_REQUEST,
+  PRODUCT_CREATE_REVIEW_SUCCESS,
+  PRODUCT_CREATE_REVIEW_FAIL
 } from '../constants/productConstants'
 
-export const listProducts = () => async (dispatch) => {
+export const listProducts = (pageNumber = '') => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
 
-    const { data } = await axios.get('/api/latest/products')
+    const { data } = await axios.get(`/api/latest/products?pageNumber=${pageNumber}`)
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
@@ -68,11 +71,11 @@ export const listAllProducts = () => async (dispatch) => {
   }
 }
 
-export const retroProducts = () => async (dispatch) => {
+export const retroProducts = (pageNumber = '') => async (dispatch) => {
   try {
     dispatch({ type: RETRO_LIST_REQUEST })
 
-    const { data } = await axios.get('/api/retro')
+    const { data } = await axios.get(`/api/retro?pageNumber=${pageNumber}`)
 
     dispatch({
       type: RETRO_LIST_SUCCESS,
@@ -86,11 +89,11 @@ export const retroProducts = () => async (dispatch) => {
   }
 }
 
-export const computerLaptopProducts = () => async (dispatch) => {
+export const computerLaptopProducts = (pageNumber = '') => async (dispatch) => {
   try {
     dispatch({ type: COMPUTER_LAPTOP_LIST_REQUEST })
 
-    const { data } = await axios.get('/api/computers-laptops')
+    const { data } = await axios.get(`/api/computers-laptops?pageNumber=${pageNumber}`)
 
     dispatch({
       type: COMPUTER_LAPTOP_LIST_SUCCESS,
@@ -104,11 +107,11 @@ export const computerLaptopProducts = () => async (dispatch) => {
   }
 }
 
-export const smartphoneProducts = () => async (dispatch) => {
+export const smartphoneProducts = (pageNumber = '') => async (dispatch) => {
   try {
     dispatch({ type: SMARTPHONE_LIST_REQUEST })
 
-    const { data } = await axios.get('/api/smartphones')
+    const { data } = await axios.get(`/api/smartphones?pageNumber=${pageNumber}`)
 
     dispatch({
       type: SMARTPHONE_LIST_SUCCESS,
@@ -122,11 +125,11 @@ export const smartphoneProducts = () => async (dispatch) => {
   }
 }
 
-export const vrProducts = () => async (dispatch) => {
+export const vrProducts = (pageNumber = '') => async (dispatch) => {
   try {
     dispatch({ type: VR_LIST_REQUEST })
 
-    const { data } = await axios.get('/api/vr')
+    const { data } = await axios.get(`/api/vr?pageNumber=${pageNumber}`)
 
     dispatch({
       type: VR_LIST_SUCCESS,
@@ -240,6 +243,35 @@ export const updateProduct = (product) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: PRODUCT_UPDATE_FAIL,
+      payload: error.response && error.response.data.message ? error.response.data.message : error.message
+    })
+  }
+}
+
+export const createProductReview = (productId, review) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: PRODUCT_CREATE_REVIEW_REQUEST
+    })
+
+    const {userLogin: { userInfo } } = getState()
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${userInfo.token}`
+      }
+    }
+
+    await axios.post(`/api/products/${productId}/reviews`, review, config)
+
+    dispatch({
+      type: PRODUCT_CREATE_REVIEW_SUCCESS
+    })
+
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_CREATE_REVIEW_FAIL,
       payload: error.response && error.response.data.message ? error.response.data.message : error.message
     })
   }

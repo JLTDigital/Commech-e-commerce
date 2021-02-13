@@ -7,6 +7,7 @@ import Computer from '../Commech/computer.jpg'
 import Smartphone from '../Commech/smartphone.jpg'
 import Vr from '../Commech/vr.jpg'
 
+
 const HomeScreen = () => {
 
   return (
