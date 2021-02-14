@@ -1,5 +1,4 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 import { Col, Row, Image } from 'react-bootstrap'
 import Commech from '../images/coverHome.png'
