@@ -6,6 +6,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import { login } from '../actions/userActions'
+import SEO from '../components/SEO'
 
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState('')
@@ -34,6 +35,7 @@ const LoginScreen = ({ location, history }) => {
       <h1>Sign In</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
+      <SEO title='Commech | Login' />
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
           <FormLabel>Email Address</FormLabel>

@@ -18,7 +18,7 @@ const Search = ({ history }) => {
       <Form.Control type='text' name='search' placeholder='Search...' onChange={(e) => setKeyword(e.target.value)} className='mr-sm-2'>
       </Form.Control>
       <Button type='submit' variant='outline-success' className='p-2'>
-        <i className='fas fa-search'></i>
+        <i className='fas fa-search mx-2'></i>
       </Button>
     </Form>
   )

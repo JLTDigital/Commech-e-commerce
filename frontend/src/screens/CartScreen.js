@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, ListGroup, Image, FormControl, Button, Card, ListGroupItem} from 'react-bootstrap'
 import Message from '../components/Message'
+import SEO from '../components/SEO'
 import { addToCart, removeFromCart } from '../actions/cartActions'
 
 const CartScreen = ({ match, location, history }) => {
@@ -31,6 +32,7 @@ const CartScreen = ({ match, location, history }) => {
 
   return (
     <Row>
+      <SEO title='Commech | Cart' />
       <Col md={12}>
         <h1 className='mb-4'>Shopping Cart</h1>
         {cartItems.length === 0 ? (<Message>Your cart is empty <Link to='/'>Go Back</Link>

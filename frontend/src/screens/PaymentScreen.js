@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
 import CheckOutSteps from '../components/CheckOutSteps'
 import { savePaymentMethod } from '../actions/cartActions'
+import SEO from '../components/SEO'
 
 const PaymentScreen = ({ history }) => {
   const cart = useSelector(state => state.cart)
@@ -25,6 +26,7 @@ const PaymentScreen = ({ history }) => {
 
   return (
     <FormContainer>
+      <SEO title='Commech | Payment' />
       <CheckOutSteps step1 step2 step3/>
       <h1>Payment Method</h1>
       <Form onSubmit={submitHandler}>

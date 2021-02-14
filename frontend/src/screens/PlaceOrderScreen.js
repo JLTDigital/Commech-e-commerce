@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import CheckOutSteps from '../components/CheckOutSteps'
 import { createOrder } from '../actions/orderActions'
+import SEO from '../components/SEO'
 
 
 const PlaceOrderScreen = ({ history }) => {
@@ -43,6 +44,7 @@ const PlaceOrderScreen = ({ history }) => {
 
   return (
     <>
+      <SEO title='Commech | Place Order' />
      <CheckOutSteps step1 step2 step3 step4 /> 
      <Row>
        <Col md={8}>

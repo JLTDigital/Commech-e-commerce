@@ -6,6 +6,7 @@ import Loader from '../components/Loader'
 import Product from '../components/Product'
 import ProductNav from '../components/productDetailsNav'
 import Paginate from '../components/Paginate'
+import SEO from '../components/SEO'
 import { smartphoneProducts } from '../actions/productActions'
 
 const SmartphonesScreen = ({ match }) => {
@@ -26,6 +27,7 @@ const SmartphonesScreen = ({ match }) => {
       <ProductNav />
       {loading ? (<Loader />) : error ? (<Message variant='danger'>{error}</Message>) : (
       <>
+      <SEO title='Commech | Smartphones' />
       <Row 
       className='mt-3'>
         {products.map(product => (

@@ -6,6 +6,7 @@ import Loader from '../components/Loader'
 import Product from '../components/Product'
 import ProductNav from '../components/productDetailsNav'
 import Paginate from '../components/Paginate'
+import SEO from '../components/SEO'
 import { computerLaptopProducts } from '../actions/productActions'
 
 const CompLapScreen = ({ match }) => {
@@ -22,6 +23,7 @@ const CompLapScreen = ({ match }) => {
 
   return (
     <>
+      <SEO title='Commech | Computer / Laptops'  />
       <h1 className='mt-3 text-center'>Computers / Laptops</h1>
       <ProductNav />
       {loading ? (<Loader />) : error ? (<Message variant='danger'>{error}</Message>) : (

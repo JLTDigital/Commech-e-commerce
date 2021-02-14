@@ -6,6 +6,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { getUserDetails, updateUserProfile } from '../actions/userActions'
 import { listUserOrders } from '../actions/orderActions'
+import SEO from '../components/SEO'
 
 const ProfileScreen = ({ history }) => {
   const [name, setName] = useState('')
@@ -59,6 +60,7 @@ const ProfileScreen = ({ history }) => {
         {error && <Message variant='danger'>{error}</Message>}
         {success && <Message variant='success'>Profile Updated</Message>}
         {loading && <Loader />}
+        <SEO title='Commech | Profile' />
         <Form onSubmit={submitHandler}>
 
           <Form.Group controlId='name'>

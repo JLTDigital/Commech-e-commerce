@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
 import CheckOutSteps from '../components/CheckOutSteps'
+import SEO from '../components/SEO'
 import { saveShippingAddress } from '../actions/cartActions'
 
 const CheckoutScreen = ({ history }) => {
@@ -24,6 +25,7 @@ const CheckoutScreen = ({ history }) => {
 
   return (
     <FormContainer>
+      <SEO title='Commech | Checkout' />
       <CheckOutSteps step1 step2/>
       <h1>Checkout</h1>
       <Form onSubmit={submitHandler}>
